@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  require 'active_model/serializers/xml'
   require 'pago'
   has_many :line_items, dependent: :destroy
 
