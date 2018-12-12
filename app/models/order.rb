@@ -1,13 +1,16 @@
+require 'active_model/serializers/xml'
+require 'pago'
+
 class Order < ApplicationRecord
-  require 'active_model/serializers/xml'
-  require 'pago'
-  has_many :line_items, dependent: :destroy
+  include ActiveModel::Serializers::Xml
 
   enum pay_type: {
-    "Check" => 0,
-    "Credit Card" => 1,
-    "Purchase Order" => 2
+      'Check' => 0,
+      'Credit Card' => 1,
+      'Purchase Order' => 2
   }
+
+  has_many :line_items, dependent: :destroy
 
   validates :name, :address, :email, presence: true
   validates :pay_type, inclusion: pay_types.keys
@@ -24,17 +27,17 @@ class Order < ApplicationRecord
     payment_method = nil
 
     case pay_type
-    when "Check"
+    when 'Check'
       payment_method = :check
       payment_details[:routing] = pay_type_params[:routing_number]
       payment_details[:account] = pay_type_params[:account_number]
-    when "Credit Card"
+    when 'Credit Card'
       payment_method = :credit_card
       payment_details[:cc_num] = pay_type_params[:credit_card_number]
       month, year = pay_type_params[:expiration_date].split(//)
       payment_details[:expiration_month] = month
       payment_details[:expiration_year] = year
-    when "Purchase Order"
+    when 'Purchase Order'
       payment_method = :po
       payment_details[:po_num] = pay_type_params[:po_number]
     end
