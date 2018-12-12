@@ -1,0 +1,28 @@
+el:
+  layouts:
+    application:
+      title: "Το Πραγματικο Ραφι"
+      home: "Σπιτι"
+      questions: "Ερωτησεις"
+      news: "Νεα"
+      contact: "Επαφη"
+
+  store:
+    index:
+      title_html: "Ο Πραγματικός σου Κατάλογος"
+      add_html: "Πρόσθεσε στο καλάθι"
+
+  carts:
+    cart:
+      title: "Το Καλάθι σου"
+      empty: "Άδειασε το Καλάθι"
+      checkout: "Κασέρι"
+
+  number:
+    currency:
+      format:
+        unit: "$US"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%n&nbsp;%u"

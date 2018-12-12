@@ -50,3 +50,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~>3.0'
 gem 'activemodel-serializers-xml'
+gem 'i18n-js'
