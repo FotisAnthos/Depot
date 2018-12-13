@@ -26,3 +26,48 @@ el:
         separator: "."
         delimiter: ","
         format: "%n&nbsp;%u"
+
+  orders:
+    new:
+      legend: "Παρακαλώ συμπληρώστε τα στοιχεία σας"
+    form:
+      name: "Όνομα"
+      address_html: "Διεύθυνση"
+      email: "Email"
+      pay_type: "Πληρωμή με"
+      pay_prompt_html: "Επιλέξτε τρόπο πληρωμής"
+      submit: "Δημιουργία παραγγελίας"
+      pay_types:
+        check: "Επιταγή"
+        credit_card: "Πιστωτική Κάρτα"
+        purchase_order: "Εντολή αγοράς"
+      check_pay_type:
+        routing_number: "Routing #"
+        account_number: "Λογαριασμός #"
+      credit_card_pay_type:
+        cc_number: "CC #"
+        expiration_date: "Ημερομηνία λήξης"
+      purchase_order_pay_type:
+        po_number: "PO #"
+
+  activerecord:
+    errors:
+      messages:
+        inclusion: "Άκυρη επιλογή"
+        blank: "δε μπορεί να είναι κενό"
+    models:
+      order: "Τουτο"
+    attributes:
+      order:
+        address: "Διεύθυνση"
+        name: "Όνομα"
+        email: "mail"
+        pay_type: "Τρόπος πληρωμής"
+  errors:
+    template:
+      body: "Βοδι"
+      header:
+        one:  "1 Υποχρεωτικό πεδίο λείπει"
+        other: "Υποχρεωτικά πεδία λείπουν"
+
+  thanks: "Ευχαριστούμε για τη προτίμηση"

@@ -3,7 +3,7 @@ require 'test_helper'
 class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should prompt for login" do
     get admin_url
-    assert_response :success
+    assert_redirected_to users_url(locale: 'en')
   end
 
   test "should login" do
@@ -16,7 +16,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should fail login" do
     dave = users(:one)
     post login_url, params: { name: dave.name, password: 'wrong'}
-    assert_redirected_to login_url
+    assert_redirected_to login_url(locale: 'en')
   end
 
   test 'should logout' do

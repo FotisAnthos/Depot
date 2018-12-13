@@ -4,6 +4,10 @@ class StoreController < ApplicationController
   before_action :set_cart
 
   def index
-    @products = Product.order(:title)
+    if params[:set_locale]
+      redirect_to store_index_url(locale: I18n.locale)
+    else
+      @products = Product.order(:title)
+    end
   end
 end

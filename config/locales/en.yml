@@ -42,12 +42,12 @@ en:
 
   store:
     index:
-      title_html: "Your Pragmatic Cart"
+      title_html: "Pragmatic Store Catalog"
       add_html: "Add To Cart"
 
   carts:
     cart:
-      title: "Your Cart"
+      title_html: "Your Cart"
       empty: "Empty Cart"
       checkout: "Checkout"
 
@@ -59,3 +59,28 @@ en:
         separator: "."
         delimiter: ","
         format: "%u%n"
+
+  orders:
+    new:
+      legend: "Please Enter Your Details"
+    form:
+      name: "Name"
+      address_html: "Address"
+      email: "Email"
+      pay_type: "Pay with"
+      pay_prompt_html: "Select a payment method"
+      submit: "Place Order"
+      pay_types:
+        check: "Check"
+        credit_card: "Credit Card"
+        purchase_order: "Purchase Order"
+      check_pay_type:
+        routing_number: "Routing #"
+        account_number: "Account #"
+      credit_card_pay_type:
+        cc_number: "CC #"
+        expiration_date: "Expiry"
+      purchase_order_pay_type:
+        po_number: "PO #"
+
+  thanks: "Thank you for your order"
